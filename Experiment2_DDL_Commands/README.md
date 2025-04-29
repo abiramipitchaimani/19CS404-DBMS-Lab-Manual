@@ -105,123 +105,221 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+-- Create a table named Shipments with the following constraints:
+
+    ShipmentID as INTEGER should be the primary key.
+    ShipmentDate as DATE.
+    SupplierID as INTEGER should be a foreign key referencing Suppliers(SupplierID).
+    OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
+
 
 ```sql
--- Paste your SQL code below for Question 1
+--CREATE TABLE Shipments
+(
+ShipmentID INTEGER primary key,
+ShipmentDate DATE,
+SupplierID INTEGER,
+OrderID INTEGER,
+FOREIGN KEY(SupplierID) REFERENCES Suppliers(SupplierID),
+FOREIGN KEY(OrderID) REFERENCES Orders(OrderID)
+);
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/4c3755b1-4e7b-4566-b871-136bd41644bf)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+--Insert the following customers into the Customers table:
+
+CustomerID  Name         Address     City        ZipCode
+----------  -----------  ----------  ----------  ----------
+302         Laura Croft  456 Elm St  Seattle     98101
+303         Bruce Wayne  789 Oak St  Gotham      10001
 
 ```sql
--- Paste your SQL code below for Question 2
+-- INSERT INTO Customers (CustomerID,Name,Address,City,ZipCode)
+VALUES
+(302,'Laura Croft','456 Elm St','Seattle',98101),
+(303,'Bruce Wayne','789 Oak St','Gotham',10001);
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/8e7cbbdb-456c-4e38-a73f-250d43bcec44)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
-
+--Write a SQL query to add a column named Date_of_birth as Date in the Student_details table.
 ```sql
--- Paste your SQL code below for Question 3
+-- ALTER TABLE Student_details
+ADD COLUMN Date_of_birth Date;
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/6c2a76f0-703e-49fa-9f15-a88b9c8a4b1d)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+-- Insert all customers from Old_customers into Customers
+
+Table attributes are CustomerID, Name, Address, Email
 
 ```sql
--- Paste your SQL code below for Question 4
+--INSERT INTO Customers (CustomerID, Name, Address, Email)
+SELECT CustomerID, Name, Address, Email FROM Old_customers;
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/6a4007f1-6f9f-428e-8cc2-aa131c92e9a3)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+-- Write an SQL command can to add a column named email of type TEXT to the customers table
 
 ```sql
--- Paste your SQL code below for Question 5
+--ALTER TABLE Customers
+ADD COLUMN email TEXT;
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/a4055014-288a-4e4d-a30f-7d5622b3471d)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+--Create a table named Invoices with the following constraints:
+
+    InvoiceID as INTEGER should be the primary key.
+    InvoiceDate as DATE.
+    Amount as REAL should be greater than 0.
+    DueDate as DATE should be greater than the InvoiceDate.
+    OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
+
 
 ```sql
--- Paste your SQL code below for Question 6
+-- CREATE TABLE Invoices
+(
+    InvoiceID INTEGER primary key,
+    InvoiceDate DATE,
+    Amount REAL CHECK(Amount>0),
+    DueDate DATE CHECK(DueDate>InvoiceDate),
+    OrderID INTEGER,
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
+);
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/30371d25-83df-41c4-ac6c-5f76be3818ea)
+
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+--Insert the below data into the Books table, allowing the Publisher and Year columns to take their default values.
 
+ISBN             Title                 Author
+---------------  --------------------  ---------------
+978-6655443321   Big Data Analytics    Karen Adams
+
+Note: The Publisher and Year columns will use their default values.
 ```sql
--- Paste your SQL code below for Question 7
+--INSERT INTO Books(ISBN,Title,Author)
+VALUES('978-6655443321','Big Data Analytics','Karen Adams');
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/05e2a2c3-8496-46dd-8d44-5d085b361505)
 
-![Output7](output.png)
 
 **Question 8**
 ---
--- Paste Question 8 here
+-- Create a new table named products with the following specifications:
+
+    product_id as INTEGER and primary key.
+    product_name as TEXT and not NULL.
+    list_price as DECIMAL (10, 2) and not NULL.
+    discount as DECIMAL (10, 2) with a default value of 0 and not NULL.
+    A CHECK constraint at the table level to ensure:
+        list_price is greater than or equal to discount
+        discount is greater than or equal to 0
+        list_price is greater than or equal to 0
+
 
 ```sql
--- Paste your SQL code below for Question 8
+--CREATE TABLE products
+(
+  product_id INTEGER primary key,
+  product_name TEXT NOT NULL,
+  list_price DECIMAL(10, 2) NOT NULL,
+  discount DECIMAL(10, 2) DEFAULT 0 NOT NULL,
+  CHECK (list_price>=discount),
+  CHECK (discount>=0),
+  CHECK (list_price>=0)
+);
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/3aeeda95-f9c5-433f-8172-f6f9ac614af4)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+--Create a table named Events with the following columns:
+
+    EventID as INTEGER
+    EventName as TEXT
+    EventDate as DATE
 
 ```sql
--- Paste your SQL code below for Question 9
+-- CREATE TABLE Events
+(
+EventID INTEGER,
+EventName TEXT,
+EventDate DATE
+);
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/e1a46426-9f20-4be7-8a97-f7c8d8d1b886)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+-- Create a table named Attendance with the following constraints:
+
+    AttendanceID as INTEGER should be the primary key.
+    EmployeeID as INTEGER should be a foreign key referencing Employees(EmployeeID).
+    AttendanceDate as DATE.
+    Status as TEXT should be one of 'Present', 'Absent', 'Leave'.
 
 ```sql
--- Paste your SQL code below for Question 10
+--CREATE TABLE Attendance
+(
+ AttendanceID INTEGER primary key,
+ EmployeeID INTEGER,
+ AttendanceDate DATE,
+ Status TEXT CHECK(Status IN('Present','Absent','Leave')),
+ FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
+);
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/831a7c1a-f7a1-4abf-a827-59010cae7162)
+
+
 
 
 ## RESULT
