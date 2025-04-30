@@ -99,8 +99,7 @@ where quantity<10 and category='Snacks';
 ---
 Write a SQL statement to update the product_name as 'Grapefruit' whose product_id is 4 in the products table.
 
-products table
----------------
+products table:
 product_id
 product_name
 category_id
@@ -182,7 +181,7 @@ Write a SQL query to remove rows from the table 'customer' with the following co
 
 Sample table: Customer
 
-+-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+  
++-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+---------+  
 |CUST_CODE  | CUST_NAME   | CUST_CITY   | WORKING_AREA | CUST_COUNTRY | GRADE | OPENING_AMT | RECEIVE_AMT | PAYMENT_AMT |OUTSTANDING_AMT| PHONE_NO     |AGENT_CODE|
 +-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+
 | C00013    | Holmes      | London      | London       | UK           |     2 |     6000.00 |     5000.00 |     7000.00 |       4000.00 | BBBBBBB      | A003     |
@@ -195,8 +194,7 @@ WHERE CUST_COUNTRY ='India'and CUST_CITY != 'Chennai';
 ```
 
 **Output:**
-
-![image](https://github.com/user-attachments/assets/212c342c-fd7a-498f-a4c6-b17573462894)
+![image](https://github.com/user-attachments/assets/a3ba9979-5847-4dd7-9496-b9c17e93c1bc)
 
 
 
