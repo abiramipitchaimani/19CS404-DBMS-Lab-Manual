@@ -61,9 +61,7 @@ where supplier_id=8;
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/ca1c49af-ba0f-4c7c-9b4a-81fccc3a1939)
-
-
+![image](https://github.com/user-attachments/assets/9a8ded14-f3c4-4e05-8b57-e65af1c77353)
 
 
 **Question 2**
@@ -173,94 +171,120 @@ where category='Grocery';
 
 **Question 6**
 ---
-Write a SQL query to remove rows from the table 'customer' with the following condition -
+Write a query to display the unique employee ID from EmployeePosition table who joined in 2024 and have a salary greater than 50000.
 
-1. 'cust_country' must be 'India',
+EmpID
 
-2. 'cus_city' must not be 'Chennai',
+EmpPosition
 
-Sample table: Customer
+DateOfJoining
 
-+-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+---------+  
-|CUST_CODE  | CUST_NAME   | CUST_CITY   | WORKING_AREA | CUST_COUNTRY | GRADE | OPENING_AMT | RECEIVE_AMT | PAYMENT_AMT |OUTSTANDING_AMT| PHONE_NO     |AGENT_CODE|
-+-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+
-| C00013    | Holmes      | London      | London       | UK           |     2 |     6000.00 |     5000.00 |     7000.00 |       4000.00 | BBBBBBB      | A003     |
-| C00001    | Micheal     | New York    | New York     | USA          |     2 |     3000.00 |     5000.00 |     2000.00 |       6000.00 | CCCCCCC      | A008     |
-| C00020    | Albert      | New York    | New York     | USA          |     3 |     5000.00 |     
+Salary
 
+1
+
+Manager
+
+01/05/2024
+
+500000
+
+2
+
+Executive
+
+02/05/2024
+
+75000
+
+ 
 ```sql
-DELETE FROM Customer
-WHERE CUST_COUNTRY ='India'and CUST_CITY != 'Chennai';
+SELECT DISTINCT EmpID FROM EmployeePosition
+WHERE strftime('%Y',DateOfJoining)='2024' AND Salary>50000;0
 ```
 
 **Output:**
-![image](https://github.com/user-attachments/assets/a3ba9979-5847-4dd7-9496-b9c17e93c1bc)
+![image](https://github.com/user-attachments/assets/acdf50c1-e197-45e1-9c77-30049cce14f7)
+
 
 
 
 **Question 7**
----
-+-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+  
-|CUST_CODE  | CUST_NAME   | CUST_CITY   | WORKING_AREA | CUST_COUNTRY | GRADE | OPENING_AMT | RECEIVE_AMT | PAYMENT_AMT |OUTSTANDING_AMT| PHONE_NO     |AGENT_CODE|
-+-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+
-| C00013    | Holmes      | London      | London       | UK           |     2 |     6000.00 |     5000.00 |     7000.00 |       4000.00 | BBBBBBB      | A003     |
-| C00001    | Micheal     | New York    | New York     | USA          |     2 |     3000.00 |     5000.00 |     2000.00 |       6000.00 | CCCCCCC      | A008     |
-| C00020    | Albert      | New York    | New York     | USA          |     3 |     5000.00 |     7000.00 |     6000.00 |       6000.00 |
+Write a SQL statement to Find those salesmen with all information whose name containing the 1st character is 'N' and the 4th character is 'l' and rests may be any character.
+
+salesman table
+
+cid         name         type        
+----------  -----------  ----------  
+0           salesman_id  numeric(5)  
+1           name         varchar(30)  
+2           city         varchar(15)  
+3           commission   decimal(5,2)  
 
 ```sql
-delete from Customer
-where CUST_COUNTRY='UK' and WORKING_AREA='London' and GRADE<3;
+SELECT *
+FROM salesman
+WHERE name LIKE 'N_i%';
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/890cf0b1-bee4-4741-bc48-1a2b9505c437)
+![image](https://github.com/user-attachments/assets/ec714e32-8cd2-49cb-abb1-2d3d3bd646ee)
+
 
 
 **Question 8**
 ---
-Write a SQL query to Delete customers from 'customer' table where 'GRADE' is not equal to 3.
+write a SQL query to create a union of two queries that shows the customer id, cities, and ratings of all customers. Those with a rating of 300 or greater will have the words 'High Rating', while the others will have the words 'Low Rating'.
 
- 
-Sample table: Customer
+customer table
 
-+-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+  
-|CUST_CODE  | CUST_NAME   | CUST_CITY   | WORKING_AREA | CUST_COUNTRY | GRADE | OPENING_AMT | RECEIVE_AMT | PAYMENT_AMT |OUTSTANDING_AMT| PHONE_NO     |AGENT_CODE|
-+-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+
-| C00013    | Holmes      | London      | London       | UK           |     2 |     6000.00 |     5000.00 |     7000.00 |       4000.00 | BBBBBBB      | A003     |
-| C00001    | Micheal     | New York    | New York     | USA          |     2 |     3000.00 |     5000.00 |     2000.00 |       6000.00 | CCCCCCC      | A008     |
-| C00020    | Albert      | New York    | New York     | USA          |     3 |     5000.00 |     7000.00 |     6000.00 |       6000.00 |
+cid           name          type   notnull       dflt_value  pk
+------------  ------------  -----  ------------  ----------  ----------
+0             customer_id   int    0                         0
+1             cust_name     text   0                         0
+2             city          text   0                         0
+3             grade         int    0                         0
+4             salesman_id   int    0                         0
 ```sql
-delete from Customer
-where GRADE !=3;
+SELECT customer_id,city,grade,
+'High Rating' AS Rating
+FROM customer
+WHERE grade>=300
+UNION
+SELECT customer_id,city,grade,
+'Low Rating' AS Rating
+FROM customer
+WHERE GRADE<300;
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/6b1236a9-9c9a-499b-b4d2-953bc40e4018)
 
 
 
 **Question 9**
 ---
-Write a SQL query to Delete customers with 'GRADE' 3 or 'AGENT_CODE' 'A008' whose 'OUTSTANDING_AMT' is less than 5000
+Write a SQL query to calculate the absolute value of the value1 column from the Calculations table.
 
-Sample table: Customer
-
-+-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+  
-|CUST_CODE  | CUST_NAME   | CUST_CITY   | WORKING_AREA | CUST_COUNTRY | GRADE | OPENING_AMT | RECEIVE_AMT | PAYMENT_AMT |OUTSTANDING_AMT| PHONE_NO     |AGENT_CODE|
-+-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+
-| C00013    | Holmes      | London      | London       | UK           |     2 |     6000.00 |     5000.00 |     7000.00 |       4000.00 | BBBBBBB      | A003     |
-| C00001    | Micheal     | New York    | New York     | USA          |     2 |     3000.00 |     5000.00 |     2000.00 |       6000.00 | CCCCCCC      | A008     |
-| C00020    | Albert      | New York    | New York     | USA          |     3 |     5000.00 |    
+cid         name        type        notnull     dflt_value  pk
+----------  ----------  ----------  ----------  ----------  ----------
+0           id          INTEGER     0                       1
+1           value1      REAL        0                       0
+2           value2      REAL        0                       0
+3           base        INTEGER     0                       0
+4           exponent    INTEGER     0                       0
+5           number      REAL        0                       0
+6           decimal     REAL        0                       0
+ 
 ```sql
-DELETE FROM Customer
-WHERE (GRADE=3 OR AGENT_CODE='A008') AND OUTSTANDING_AMT<5000;
+SELECT id,value1,ABS(value1) AS absolute_value
+FROM calculations;
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/148269fb-e80a-4431-842c-ea5d6ab959d0)
+![image](https://github.com/user-attachments/assets/32590cc3-3830-4b97-83f5-61504d0aa969)
 
 
 
