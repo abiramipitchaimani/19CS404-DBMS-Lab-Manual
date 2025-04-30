@@ -173,15 +173,24 @@ where department_id=50;
 Update the reorder level to 40 pieces for all products belonging to the 'Grocery' category in the products table.
 
 PRODUCTS TABLE
+
 name               type
 ----------------  ---------------
+
 product_id         INT
+
 product_name       VARCHAR(100)
+
 category           VARCHAR(50)
+
 cost_price         DECIMAL(10,2)
+
 sell_price         DECIMAL(10,2)
+
 reorder_lvl        INT
+
 quantity           INT
+
 supplier_id        INT
 ```sql
 update PRODUCTS
@@ -198,29 +207,11 @@ where category='Grocery';
 ---
 Write a query to display the unique employee ID from EmployeePosition table who joined in 2024 and have a salary greater than 50000.
 
-EmpID
+EmpID  EmpPosition     	DateOfJoining   Salary
 
-EmpPosition
+1       Manager         01/05/2024      	500000
 
-DateOfJoining
-
-Salary
-
-1
-
-Manager
-
-01/05/2024
-
-500000
-
-2
-
-Executive
-
-02/05/2024
-
-75000
+2       Executive       02/05/2024       75000
 
  
 ```sql
