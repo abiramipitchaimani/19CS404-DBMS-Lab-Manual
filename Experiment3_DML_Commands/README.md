@@ -134,17 +134,28 @@ where product_id=4;
 Write a SQL statement to Update the hire_date of employees in department 50 to 2024-01-24.
 
 Employees table
----------------
+
+
 employee_id
+
 first_name
+
 last_name
+
 email
+
 phone_number
+
 hire_date
+
 job_id
+
 salary
+
 commission_pct
+
 manager_id
+
 department_id
 ```sql
 update Employees
