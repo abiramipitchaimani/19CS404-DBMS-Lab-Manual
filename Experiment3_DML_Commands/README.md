@@ -207,11 +207,11 @@ where category='Grocery';
 ---
 Write a query to display the unique employee ID from EmployeePosition table who joined in 2024 and have a salary greater than 50000.
 
-EmpID  EmpPosition     	DateOfJoining   Salary
+EmpID   EmpPosition      	DateOfJoining    Salary
 
-1       Manager         01/05/2024      	500000
+1        Manager          01/05/2024       	500000
 
-2       Executive       02/05/2024       75000
+2        Executive        02/05/2024        75000
 
  
 ```sql
@@ -232,9 +232,13 @@ salesman table
 
 cid         name         type        
 ----------  -----------  ----------  
+
 0           salesman_id  numeric(5)  
+
 1           name         varchar(30)  
+
 2           city         varchar(15)  
+
 3           commission   decimal(5,2)  
 
 ```sql
@@ -257,10 +261,15 @@ customer table
 
 cid           name          type   notnull       dflt_value  pk
 ------------  ------------  -----  ------------  ----------  ----------
+
 0             customer_id   int    0                         0
+
 1             cust_name     text   0                         0
+
 2             city          text   0                         0
+
 3             grade         int    0                         0
+
 4             salesman_id   int    0                         0
 ```sql
 SELECT customer_id,city,grade,
@@ -283,15 +292,22 @@ WHERE GRADE<300;
 ---
 Write a SQL query to calculate the absolute value of the value1 column from the Calculations table.
 
-cid         name        type        notnull     dflt_value  pk
+cid            name         type         notnull      dflt_value   pk
 ----------  ----------  ----------  ----------  ----------  ----------
-0           id          INTEGER     0                       1
-1           value1      REAL        0                       0
-2           value2      REAL        0                       0
-3           base        INTEGER     0                       0
-4           exponent    INTEGER     0                       0
-5           number      REAL        0                       0
-6           decimal     REAL        0                       0
+
+0            id           INTEGER       0                       1
+
+1            value1       REAL         0                       0
+
+2            value2       REAL         0                       0
+
+3            base         INTEGER      0                       0
+
+4            exponent     INTEGER      0                       0
+
+5            number       REAL         0                       0
+
+6            decimal      REAL         0                       0
  
 ```sql
 SELECT id,value1,ABS(value1) AS absolute_value
@@ -310,7 +326,7 @@ Write a SQL query to Delete a Specific Surgery whose ID is 3
 
 Sample table: Surgeries
 
-attributes: surgery_id, patient_id, surgeon_id, surgery_date
+attributes:    surgery_id, patient_id, surgeon_id, surgery_date
 
 
 ```sql
