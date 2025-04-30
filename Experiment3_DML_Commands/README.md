@@ -69,7 +69,7 @@ where supplier_id=8;
 Write a SQL statement to Update the reorder level to 20 where the quantity in stock is less than 10 and product category is 'Snacks' in the products table.
 
 Products table
----------------
+
 product_id
 product_name
 category
@@ -97,7 +97,8 @@ where quantity<10 and category='Snacks';
 ---
 Write a SQL statement to update the product_name as 'Grapefruit' whose product_id is 4 in the products table.
 
-products table:
+products table
+
 product_id
 product_name
 category_id
