@@ -64,7 +64,8 @@ where ADDRESS="Delhi" and AGE<30);
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/a96f21ff-5cb2-431a-863e-0e42176a9320)
+
 
 **Question 2**
 ---
@@ -93,7 +94,8 @@ where age<30
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/e5e3cc3b-ba2a-49b8-9d0e-6c699dde654d)
+
 
 **Question 3**
 ---
@@ -120,7 +122,8 @@ where id=(select max(id) from customer));
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/58b754f7-122b-4ddb-ac32-cdac7b4830b7)
+
 
 **Question 4**
 ---
@@ -155,7 +158,8 @@ where city='Paris');
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/b44de8b4-e32b-4fb6-beff-13704d232f4b)
+
 
 **Question 5**
 ---
@@ -176,7 +180,7 @@ from Departments)
 
 **Output:**
 
-![Output5](output.png)
+
 
 **Question 6**
 ---
@@ -196,7 +200,7 @@ from medications)
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/80f7c6ed-9dc5-4cda-a2c1-78176fe6cdf2)
 
 **Question 7**
 ---
@@ -232,7 +236,8 @@ having count(customer_id)>1)
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/07ce649b-3d5c-4151-b269-5bc0087af9dd)
+
 
 **Question 8**
 ---
@@ -262,7 +267,7 @@ having count(*)=1
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/d274709a-dec4-4f17-b3bd-aafa0a89480c)
 
 **Question 9**
 ---
@@ -270,7 +275,7 @@ Write a SQL query that retrieves the names of students and their corresponding g
 
 Sample table: GRADES (attributes: student_id, student_name, subject, grade)
 
-![image](https://github.com/user-attachments/assets/d274709a-dec4-4f17-b3bd-aafa0a89480c)
+![image](https://github.com/user-attachments/assets/817b3888-0bb9-4087-b346-e68d7263acc3)
 
 
 ```sql
@@ -310,7 +315,8 @@ where customer_id=3007);
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/9a42e574-b995-4e94-8995-3c840a4cea1d)
+
 
 
 ## RESULT
