@@ -100,7 +100,6 @@ where quantity<10 and category='Snacks';
 Write a SQL statement to update the product_name as 'Grapefruit' whose product_id is 4 in the products table.
 
 products table
-
 ---------------
 product_id
 product_name
@@ -124,7 +123,6 @@ where product_id=4;
 Write a SQL statement to Update the hire_date of employees in department 50 to 2024-01-24.
 
 Employees table
-
 ---------------
 employee_id
 first_name
@@ -153,9 +151,8 @@ where department_id=50;
 Update the reorder level to 40 pieces for all products belonging to the 'Grocery' category in the products table.
 
 PRODUCTS TABLE
-
 name               type
------------------  ---------------
+----------------  ---------------
 product_id         INT
 product_name       VARCHAR(100)
 category           VARCHAR(50)
