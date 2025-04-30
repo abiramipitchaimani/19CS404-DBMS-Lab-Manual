@@ -71,7 +71,6 @@ where supplier_id=8;
 Write a SQL statement to Update the reorder level to 20 where the quantity in stock is less than 10 and product category is 'Snacks' in the products table.
 
 Products table
-
 ---------------
 product_id
 product_name
