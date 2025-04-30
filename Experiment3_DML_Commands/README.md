@@ -70,13 +70,21 @@ Write a SQL statement to Update the reorder level to 20 where the quantity in st
 
 Products table
 
+
 product_id
+
 product_name
+
 category
+
 cost_price
+
 sell_price
+
 reorder_lvl
+
 quantity
+
 supplier_id
 
 ![image](https://github.com/user-attachments/assets/bc2dfbe6-48f7-49b0-9afa-834d069050be)
@@ -99,9 +107,14 @@ Write a SQL statement to update the product_name as 'Grapefruit' whose product_i
 
 products table
 
+
+
 product_id
+
 product_name
+
 category_id
+
 availability
 
 ```sql
