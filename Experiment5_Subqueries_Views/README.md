@@ -179,6 +179,7 @@ from Departments)
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/ec6e4721-69ab-486f-99d6-c685840fb909)
 
 
 
@@ -266,8 +267,9 @@ having count(*)=1
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/817b3888-0bb9-4087-b346-e68d7263acc3)
 
-![image](https://github.com/user-attachments/assets/d274709a-dec4-4f17-b3bd-aafa0a89480c)
+
 
 **Question 9**
 ---
@@ -275,7 +277,7 @@ Write a SQL query that retrieves the names of students and their corresponding g
 
 Sample table: GRADES (attributes: student_id, student_name, subject, grade)
 
-![image](https://github.com/user-attachments/assets/817b3888-0bb9-4087-b346-e68d7263acc3)
+![image](https://github.com/user-attachments/assets/d274709a-dec4-4f17-b3bd-aafa0a89480c)
 
 
 ```sql
@@ -287,8 +289,8 @@ where g2.subject=g1.subject)
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/9f8aa09a-f97a-44fc-8d35-5a396ab29627)
 
-![Output9](output.png)
 
 **Question 10**
 ---
