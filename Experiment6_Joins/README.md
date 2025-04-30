@@ -335,8 +335,8 @@ Sample table: salesman
 ```sql
 select c.cust_name as"Customer Name",c.city,s.name as Salesman,s.commission from customer c
 join salesman s on c.salesman_id=s.salesman_id
-where s.commission>0.12;```
-
+where s.commission>0.12;
+```
 **Output:**
 
 ![image](https://github.com/user-attachments/assets/e2dcb700-96a7-41b9-a43f-a3cb86b7803e)
