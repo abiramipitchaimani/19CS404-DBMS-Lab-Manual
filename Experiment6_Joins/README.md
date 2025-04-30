@@ -125,7 +125,9 @@ ATTRIBUTES - doctor_id, first_name, last_name, specialization
 
 
 ```sql
--- Paste your SQL code below for Question 3
+select p.first_name as patient_name,d.first_name as doctor_name from patients p
+inner join doctors d on p.doctor_id = d.doctor_id
+where p.discharge_date is null;
 ```
 
 **Output:**
