@@ -81,6 +81,7 @@ sell_price
 reorder_lvl
 quantity
 supplier_id
+
 ![image](https://github.com/user-attachments/assets/bc2dfbe6-48f7-49b0-9afa-834d069050be)
 
 
