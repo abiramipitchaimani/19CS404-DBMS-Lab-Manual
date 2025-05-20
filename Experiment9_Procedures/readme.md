@@ -189,6 +189,7 @@ Reversed number of 1234 is 4321
 - Display the multiplication results using `DBMS_OUTPUT.PUT_LINE`.
 
 ### Program:
+```
 CREATE OR REPLACE PROCEDURE print_table (n IN NUMBER)
 IS
 BEGIN
@@ -197,7 +198,10 @@ BEGIN
       DBMS_OUTPUT.PUT_LINE(n || ' x ' || i || ' = ' || (n * i));
    END LOOP;
 END;
+```
+```
 EXEC print_table(5);
+```
 **Expected Output:**  
 Multiplication table of 5:  
 5 x 1 = 5  
