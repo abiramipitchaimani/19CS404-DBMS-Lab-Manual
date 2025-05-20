@@ -163,6 +163,7 @@ DECLARE
     END IF;
 
      EXCEPTION
+     
     WHEN NO_DATA_FOUND THEN
     
         DBMS_OUTPUT.PUT_LINE('No employees found in the given salary range.');
@@ -170,7 +171,7 @@ DECLARE
     WHEN OTHERS THEN
     
         DBMS_OUTPUT.PUT_LINE('Unexpected error: ' || SQLERRM);
-END;
+         END;
 **Output:**  
 The program should display the employee details within the specified salary range or an error message if no data is found.
 ## RESULT:
@@ -208,6 +209,7 @@ DECLARE
     END IF;
 
     EXCEPTION
+    
     WHEN NO_DATA_FOUND THEN
     
         DBMS_OUTPUT.PUT_LINE('No employees found in the database.');
@@ -216,7 +218,7 @@ DECLARE
     
         DBMS_OUTPUT.PUT_LINE('Unexpected error: ' || SQLERRM);
         
-END;
+          END;
 
 **Output:**  
 The program should display employee names with their department numbers or the appropriate error message if no data is found.
@@ -278,7 +280,7 @@ DECLARE
     
         DBMS_OUTPUT.PUT_LINE('Unexpected error: ' || SQLERRM);
         
-END;
+         END;
 
 **Output:**  
 The program should display employee records or the appropriate error message if no data is found.
@@ -328,6 +330,7 @@ DECLARE
     END IF;
     
    EXCEPTION
+   
     WHEN NO_DATA_FOUND THEN
     
         DBMS_OUTPUT.PUT_LINE('No employees found in the specified department.');
@@ -336,8 +339,8 @@ DECLARE
     
         DBMS_OUTPUT.PUT_LINE('An unexpected error occurred: ' || SQLERRM);
         
-END;
-/
+           END;
+
 **Output:**  
 The program should update employee salaries and display a message, or it should display an error message if no data is found.
 ## RESULT:
