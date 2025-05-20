@@ -102,7 +102,7 @@ BEGIN
         RAISE NO_DATA_FOUND;
     END IF;
 
-EXCEPTION
+   EXCEPTION
     WHEN NO_DATA_FOUND THEN
         DBMS_OUTPUT.PUT_LINE('No employee records found.');
     WHEN OTHERS THEN
