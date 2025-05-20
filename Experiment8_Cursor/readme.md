@@ -135,6 +135,7 @@ The program should display the employee details or an error message.
 - Implement exception handling to catch and display relevant error messages.
 
 ### Program:
+
    SET SERVEROUTPUT ON;
 
       DECLARE
@@ -199,9 +200,11 @@ The program should display the employee details within the specified salary rang
 - Implement exception handling to catch the relevant exceptions.
 
 ### Program:
+
  SET SERVEROUTPUT ON;
 
-    DECLARE
+      DECLARE
+      
     no_data BOOLEAN := TRUE;
      BEGIN
     FOR emp_rec IN (SELECT emp_name, dept_no FROM employees) LOOP
@@ -247,9 +250,9 @@ The program should display employee names with their department numbers or the a
 - Implement exception handling to catch the relevant exceptions and display appropriate messages.
 
 ### Program:
-SET SERVEROUTPUT ON;
+  SET SERVEROUTPUT ON;
 
-DECLARE
+   DECLARE
     CURSOR emp_cursor IS
         SELECT emp_id, emp_name, designation, salary FROM employees;
 
@@ -309,9 +312,10 @@ The program should display employee records or the appropriate error message if 
 - Implement exception handling to handle `NO_DATA_FOUND` or other errors that may occur.
 
 ### Program:
- SET SERVEROUTPUT ON;
+ 
+  SET SERVEROUTPUT ON;
 
- DECLARE
+      DECLARE
     CURSOR emp_cursor (p_dept_no NUMBER) IS
         SELECT emp_id, emp_name, salary
         FROM employees
