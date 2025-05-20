@@ -77,11 +77,13 @@ END;
 - Implement exception handling to catch the relevant exceptions and display appropriate messages.
 
 ### Program:
-SET SERVEROUTPUT ON;
+      SET SERVEROUTPUT ON;
 
-DECLARE
-    CURSOR emp_cursor IS
-        SELECT emp_name, designation FROM employees;
+           DECLARE
+           
+           CURSOR emp_cursor IS
+           
+          SELECT emp_name, designation FROM employees;
 
     v_name employees.emp_name%TYPE;
     v_desig employees.designation%TYPE;
@@ -135,9 +137,12 @@ The program should display the employee details or an error message.
 ### Program:
 SET SERVEROUTPUT ON;
 
-DECLARE
+  DECLARE
+  
     CURSOR emp_cursor(min_sal NUMBER, max_sal NUMBER) IS
+    
         SELECT emp_name, salary FROM employees
+        
         WHERE salary BETWEEN min_sal AND max_sal;
 
     v_name employees.emp_name%TYPE;
@@ -194,9 +199,9 @@ The program should display the employee details within the specified salary rang
 - Implement exception handling to catch the relevant exceptions.
 
 ### Program:
-SET SERVEROUTPUT ON;
+ SET SERVEROUTPUT ON;
 
-DECLARE
+    DECLARE
     no_data BOOLEAN := TRUE;
      BEGIN
     FOR emp_rec IN (SELECT emp_name, dept_no FROM employees) LOOP
@@ -304,9 +309,9 @@ The program should display employee records or the appropriate error message if 
 - Implement exception handling to handle `NO_DATA_FOUND` or other errors that may occur.
 
 ### Program:
-SET SERVEROUTPUT ON;
+ SET SERVEROUTPUT ON;
 
-DECLARE
+ DECLARE
     CURSOR emp_cursor (p_dept_no NUMBER) IS
         SELECT emp_id, emp_name, salary
         FROM employees
@@ -329,13 +334,13 @@ DECLARE
         DBMS_OUTPUT.PUT_LINE('Salaries updated for ' || v_rows_updated || ' employees in department 10.');
     END IF;
     
-   EXCEPTION
+    EXCEPTION
    
-    WHEN NO_DATA_FOUND THEN
+      WHEN NO_DATA_FOUND THEN
     
         DBMS_OUTPUT.PUT_LINE('No employees found in the specified department.');
         
-    WHEN OTHERS THEN
+        WHEN OTHERS THEN
     
         DBMS_OUTPUT.PUT_LINE('An unexpected error occurred: ' || SQLERRM);
         
