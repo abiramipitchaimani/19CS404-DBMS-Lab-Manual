@@ -147,7 +147,7 @@ DECLARE
     v_max NUMBER := 70000;
 
     no_data BOOLEAN := TRUE;
-BEGIN
+     BEGIN
     OPEN emp_cursor(v_min, v_max);
     LOOP
         FETCH emp_cursor INTO v_name, v_salary;
@@ -162,10 +162,13 @@ BEGIN
         RAISE NO_DATA_FOUND;
     END IF;
 
-EXCEPTION
+     EXCEPTION
     WHEN NO_DATA_FOUND THEN
+    
         DBMS_OUTPUT.PUT_LINE('No employees found in the given salary range.');
+        
     WHEN OTHERS THEN
+    
         DBMS_OUTPUT.PUT_LINE('Unexpected error: ' || SQLERRM);
 END;
 **Output:**  
@@ -194,7 +197,7 @@ SET SERVEROUTPUT ON;
 
 DECLARE
     no_data BOOLEAN := TRUE;
-BEGIN
+     BEGIN
     FOR emp_rec IN (SELECT emp_name, dept_no FROM employees) LOOP
         DBMS_OUTPUT.PUT_LINE('Employee: ' || emp_rec.emp_name || ', Dept No: ' || emp_rec.dept_no);
         no_data := FALSE;
@@ -204,11 +207,15 @@ BEGIN
         RAISE NO_DATA_FOUND;
     END IF;
 
-EXCEPTION
+    EXCEPTION
     WHEN NO_DATA_FOUND THEN
+    
         DBMS_OUTPUT.PUT_LINE('No employees found in the database.');
+        
     WHEN OTHERS THEN
+    
         DBMS_OUTPUT.PUT_LINE('Unexpected error: ' || SQLERRM);
+        
 END;
 
 **Output:**  
@@ -242,7 +249,7 @@ DECLARE
     emp_record emp_cursor%ROWTYPE;
 
     no_data BOOLEAN := TRUE;
-BEGIN
+      BEGIN
     OPEN emp_cursor;
     LOOP
         FETCH emp_cursor INTO emp_record;
@@ -261,11 +268,16 @@ BEGIN
         RAISE NO_DATA_FOUND;
     END IF;
 
-EXCEPTION
+   EXCEPTION
+   
     WHEN NO_DATA_FOUND THEN
+    
         DBMS_OUTPUT.PUT_LINE('No employee records found.');
+        
     WHEN OTHERS THEN
+    
         DBMS_OUTPUT.PUT_LINE('Unexpected error: ' || SQLERRM);
+        
 END;
 
 **Output:**  
@@ -300,7 +312,7 @@ DECLARE
         FOR UPDATE OF salary;
         
     v_rows_updated NUMBER := 0;
-BEGIN
+     BEGIN
     FOR emp_rec IN emp_cursor(10) LOOP
         UPDATE employees
         SET salary = salary * 1.10
@@ -315,11 +327,15 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE('Salaries updated for ' || v_rows_updated || ' employees in department 10.');
     END IF;
     
-EXCEPTION
+   EXCEPTION
     WHEN NO_DATA_FOUND THEN
+    
         DBMS_OUTPUT.PUT_LINE('No employees found in the specified department.');
+        
     WHEN OTHERS THEN
+    
         DBMS_OUTPUT.PUT_LINE('An unexpected error occurred: ' || SQLERRM);
+        
 END;
 /
 **Output:**  
