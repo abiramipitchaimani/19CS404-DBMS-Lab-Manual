@@ -35,6 +35,7 @@ END;
 - Display the greater number using `DBMS_OUTPUT.PUT_LINE`.
 
 ### Program:
+```
 DECLARE
    num1 NUMBER := 45;  -- You can change these values
    num2 NUMBER := 80;
@@ -45,7 +46,7 @@ BEGIN
       DBMS_OUTPUT.PUT_LINE('Greater number is: ' || num2);
    END IF;
 END;
-
+```
 
 **Expected Output:**  
 Greater number is: 80
@@ -63,6 +64,7 @@ Greater number is: 80
 - Display the result using `DBMS_OUTPUT.PUT_LINE`.
 
 ### Program:
+```
 DECLARE
    n NUMBER := 10;       
    sum NUMBER := 0;
@@ -75,6 +77,7 @@ BEGIN
 
    DBMS_OUTPUT.PUT_LINE('Sum of first ' || n || ' natural numbers is: ' || sum);
 END;
+```
 **Expected Output:**  
 Sum of first 10 natural numbers is: 55
 ## RESULT
@@ -91,6 +94,7 @@ Sum of first 10 natural numbers is: 55
 - Print each term in the series.
 
 ### Program:
+```
 DECLARE
     n NUMBER := 7; -- number of terms to generate
     a NUMBER := 0;
@@ -114,6 +118,7 @@ BEGIN
     END LOOP;
     DBMS_OUTPUT.NEW_LINE;
 END;
+```
 **Expected Output:**  
 n = 7  
 Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8
@@ -130,6 +135,7 @@ Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8
 - Display the reversed number.
 
 ### Program:
+```
 DECLARE
    n NUMBER := 1535;         
    reversed NUMBER := 0;
@@ -145,7 +151,7 @@ BEGIN
    DBMS_OUTPUT.PUT_LINE('n = ' || original);
    DBMS_OUTPUT.PUT_LINE('Reversed number is ' || reversed);
 END;
-
+```
 **Expected Output:**  
 n = 1535  
 Reversed number is 5351
@@ -162,6 +168,7 @@ Reversed number is 5351
 - Display the largest number.
 
 ### Program:
+```
 DECLARE
    a NUMBER := 10;
    b NUMBER := 9;
@@ -179,6 +186,7 @@ BEGIN
    DBMS_OUTPUT.PUT_LINE('a = ' || a || ', b = ' || b || ', c = ' || c);
    DBMS_OUTPUT.PUT_LINE('Largest of three numbers is ' || largest);
 END;
+```
 **Expected Output:**  
 a = 10, b = 9, c = 15  
 Largest of three number is 15
