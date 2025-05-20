@@ -250,17 +250,17 @@ The program should display employee names with their department numbers or the a
 ### Program:
   SET SERVEROUTPUT ON;
 
-   DECLARE
+     DECLARE
     CURSOR emp_cursor IS
     
         SELECT emp_id, emp_name, designation, salary FROM employees;
 
-    emp_record emp_cursor%ROWTYPE;
+     emp_record emp_cursor%ROWTYPE;
 
-    no_data BOOLEAN := TRUE;
+     no_data BOOLEAN := TRUE;
       BEGIN
-    OPEN emp_cursor;
-    LOOP
+     OPEN emp_cursor;
+     LOOP
         FETCH emp_cursor INTO emp_record;
         EXIT WHEN emp_cursor%NOTFOUND;
 
@@ -271,14 +271,14 @@ The program should display employee names with their department numbers or the a
 
         no_data := FALSE;
       END LOOP;
-    CLOSE emp_cursor;
+      CLOSE emp_cursor;
 
-    IF no_data THEN
+     IF no_data THEN
         RAISE NO_DATA_FOUND;
     END IF;
     
-   EXCEPTION
-   
+    EXCEPTION
+      
        WHEN NO_DATA_FOUND THEN
     
         DBMS_OUTPUT.PUT_LINE('No employee records found.');
@@ -312,31 +312,31 @@ The program should display employee records or the appropriate error message if 
 
 ### Program:
    SET SERVEROUTPUT ON;
-
+    
       DECLARE
-    CURSOR emp_cursor (p_dept_no NUMBER) IS
+     CURSOR emp_cursor (p_dept_no NUMBER) IS
         SELECT emp_id, emp_name, salary
         FROM employees
         WHERE dept_no = p_dept_no
         FOR UPDATE OF salary;
         
-    v_rows_updated NUMBER := 0;
+     v_rows_updated NUMBER := 0;
      BEGIN
-    FOR emp_rec IN emp_cursor(10) LOOP
+     FOR emp_rec IN emp_cursor(10) LOOP
         UPDATE employees
         SET salary = salary * 1.10
         WHERE CURRENT OF emp_cursor;
         
         v_rows_updated := v_rows_updated + 1;
-    END LOOP;
+     END LOOP;
     
-    IF v_rows_updated = 0 THEN
+     IF v_rows_updated = 0 THEN
         RAISE NO_DATA_FOUND;
-    ELSE
-        DBMS_OUTPUT.PUT_LINE('Salaries updated for ' || v_rows_updated || ' employees in department 10.');
-    END IF;
+     ELSE
+         DBMS_OUTPUT.PUT_LINE('Salaries updated for ' || v_rows_updated || ' employees in department 10.');
+     END IF;
     
-    EXCEPTION
+     EXCEPTION
    
       WHEN NO_DATA_FOUND THEN
     
