@@ -60,6 +60,7 @@ Key Differences:
 - Use `DBMS_OUTPUT.PUT_LINE` to display the result.
 - Call the procedure with a number as input.
 ### Program:
+```
 CREATE OR REPLACE PROCEDURE find_square (num IN NUMBER)
 IS
    result NUMBER;
@@ -67,7 +68,10 @@ BEGIN
    result := num * num;
    DBMS_OUTPUT.PUT_LINE('Square of ' || num || ' is ' || result);
 END;
+```
+```
 EXEC find_square(6);
+```
 
 **Expected Output:**  
 Square of 6 is 36
@@ -86,6 +90,7 @@ Square of 6 is 36
 - Call the function using a `SELECT` statement or in an anonymous block.
 
 ### Program:
+```
 CREATE OR REPLACE FUNCTION get_factorial (n IN NUMBER)
 RETURN NUMBER
 IS
@@ -96,9 +101,12 @@ BEGIN
    END LOOP;
    RETURN fact;
 END;
+```
+```
 BEGIN
    DBMS_OUTPUT.PUT_LINE('Factorial of 5 is ' || get_factorial(5));
 END;
+```
 **Expected Output:**  
 Factorial of 5 is 120
 ## Result:
@@ -115,6 +123,7 @@ Factorial of 5 is 120
 - Display whether it is Even or Odd using `DBMS_OUTPUT.PUT_LINE`.
 
 ### Program:
+```
 CREATE OR REPLACE PROCEDURE check_even_odd (n IN NUMBER)
 IS
 BEGIN
@@ -124,7 +133,10 @@ BEGIN
       DBMS_OUTPUT.PUT_LINE(n || ' is Odd');
    END IF;
 END;
+```
+```
 EXEC check_even_odd(12);
+```
 **Expected Output:**  
 12 is Even
 ## Result:
@@ -142,6 +154,7 @@ EXEC check_even_odd(12);
 - Call the function and display the output.
 
 ### Program:
+```
 CREATE OR REPLACE FUNCTION reverse_number (n IN NUMBER)
 RETURN NUMBER
 IS
@@ -154,9 +167,12 @@ BEGIN
    END LOOP;
    RETURN rev;
 END;
+```
+```
 BEGIN
    DBMS_OUTPUT.PUT_LINE('Reversed number of 1234 is ' || reverse_number(1234));
 END;
+```
 **Expected Output:**  
 Reversed number of 1234 is 4321
 ## Result:
