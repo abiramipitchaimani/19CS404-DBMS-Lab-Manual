@@ -135,11 +135,11 @@ The program should display the employee details or an error message.
 - Implement exception handling to catch and display relevant error messages.
 
 ### Program:
-SET SERVEROUTPUT ON;
+   SET SERVEROUTPUT ON;
 
-  DECLARE
+      DECLARE
   
-    CURSOR emp_cursor(min_sal NUMBER, max_sal NUMBER) IS
+       CURSOR emp_cursor(min_sal NUMBER, max_sal NUMBER) IS
     
         SELECT emp_name, salary FROM employees
         
