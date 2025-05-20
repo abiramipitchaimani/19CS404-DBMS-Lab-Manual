@@ -87,7 +87,7 @@ DECLARE
     v_desig employees.designation%TYPE;
 
     no_data BOOLEAN := TRUE;
-BEGIN
+     BEGIN
     OPEN emp_cursor;
     LOOP
         FETCH emp_cursor INTO v_name, v_desig;
@@ -102,12 +102,15 @@ BEGIN
         RAISE NO_DATA_FOUND;
     END IF;
 
-   EXCEPTION
+     EXCEPTION
     WHEN NO_DATA_FOUND THEN
+    
         DBMS_OUTPUT.PUT_LINE('No employee records found.');
+        
     WHEN OTHERS THEN
+    
         DBMS_OUTPUT.PUT_LINE('Unexpected error: ' || SQLERRM);
-END;
+      END;
 **Output:**  
 The program should display the employee details or an error message.
 ## RESULT:
