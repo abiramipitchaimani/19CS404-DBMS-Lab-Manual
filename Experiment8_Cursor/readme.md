@@ -135,8 +135,7 @@ The program should display the employee details or an error message.
 - Implement exception handling to catch and display relevant error messages.
 
 ### Program:
-
-   SET SERVEROUTPUT ON;
+    SET SERVEROUTPUT ON;
 
       DECLARE
   
@@ -200,14 +199,13 @@ The program should display the employee details within the specified salary rang
 - Implement exception handling to catch the relevant exceptions.
 
 ### Program:
-
- SET SERVEROUTPUT ON;
+     SET SERVEROUTPUT ON;
 
       DECLARE
       
     no_data BOOLEAN := TRUE;
      BEGIN
-    FOR emp_rec IN (SELECT emp_name, dept_no FROM employees) LOOP
+     FOR emp_rec IN (SELECT emp_name, dept_no FROM employees) LOOP
         DBMS_OUTPUT.PUT_LINE('Employee: ' || emp_rec.emp_name || ', Dept No: ' || emp_rec.dept_no);
         no_data := FALSE;
     END LOOP;
@@ -254,6 +252,7 @@ The program should display employee names with their department numbers or the a
 
    DECLARE
     CURSOR emp_cursor IS
+    
         SELECT emp_id, emp_name, designation, salary FROM employees;
 
     emp_record emp_cursor%ROWTYPE;
@@ -271,20 +270,20 @@ The program should display employee names with their department numbers or the a
                              ', Salary: ' || emp_record.salary);
 
         no_data := FALSE;
-    END LOOP;
+      END LOOP;
     CLOSE emp_cursor;
 
     IF no_data THEN
         RAISE NO_DATA_FOUND;
     END IF;
-
+    
    EXCEPTION
    
-    WHEN NO_DATA_FOUND THEN
+       WHEN NO_DATA_FOUND THEN
     
         DBMS_OUTPUT.PUT_LINE('No employee records found.');
         
-    WHEN OTHERS THEN
+      WHEN OTHERS THEN
     
         DBMS_OUTPUT.PUT_LINE('Unexpected error: ' || SQLERRM);
         
@@ -312,8 +311,7 @@ The program should display employee records or the appropriate error message if 
 - Implement exception handling to handle `NO_DATA_FOUND` or other errors that may occur.
 
 ### Program:
- 
-  SET SERVEROUTPUT ON;
+   SET SERVEROUTPUT ON;
 
       DECLARE
     CURSOR emp_cursor (p_dept_no NUMBER) IS
